@@ -16,5 +16,13 @@ func info(w http.ResponseWriter, r *http.Request){
 func main(){
   http.HandleFunc("/", home)
   http.HandleFunc("/kampret", info)
+func contact(w http.ResponseWriter, r *http.Request){
+  fmt.Fprintf(w, "Halaman Kontak")
+}
+
+
+func main(){
+  http.HandleFunc("/", home)
+  http.HandleFunc("/contact", contact)
   http.ListenAndServe(":8080", nil)
 }
